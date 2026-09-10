@@ -62,6 +62,20 @@ situations where a direct UDP path is impossible.
 7. The hub assigns each peer a VPN IP (`10.8.0.2` … `10.8.0.254`) and routes packets between
    peers in user space; the routing table is also broadcast to every peer for display.
 
+### Screenshots
+
+**Main window — client connected, peers panel collapsed**
+
+<img src="screenshots/main-window.png" alt="Main window of Peertopeer P2P VPN, connect mode" width="640">
+
+**Connected peers — every machine sees the others**
+
+The hub assigns each peer its own VPN IP. The **Taşıma / Transport** column shows whether that
+peer is reached directly over UDP (`Doğrudan P2P`) or through the encrypted cloud relay
+(`Bulut Relay`).
+
+<img src="screenshots/peers-list.png" alt="Connected peers list showing VPN IP, public address, transport and traffic" width="640">
+
 ### Requirements
 
 - Python 3.8+
@@ -115,6 +129,25 @@ sudo python pertoper_vpn.py
 
 Both sides must use **the same secret key** and be able to reach the same MQTT brokers.
 
+### Building a Standalone Binary
+
+**Linux**
+
+```bash
+./build.sh
+# output: dist/linux/PertoperVPN
+```
+
+**Windows**
+
+```bat
+build.bat
+:: interactive menu:
+::   [1] Windows (.exe)   ->  dist\windows\PertoperVPN.exe
+::   [2] Linux (ELF)      ->  dist\linux\PertoperVPN
+::   [3] Both
+```
+
 ### Sharing the Peer File
 
 When the hub exports `peer_info.json`, the file contains the public endpoint **and** the shared key:
@@ -140,6 +173,7 @@ build.sh            # Linux build script (PyInstaller)
 build.bat           # Windows / Linux build menu (PyInstaller)
 pertoper_vpn.ico    # application icon (Windows)
 pertoper_vpn.png    # application icon (Linux / tray)
+screenshots/        # screenshots used in this README
 README.md
 ```
 
@@ -227,6 +261,19 @@ yedek yolu.
 6. Relay'deyken arka plan yoklaması **doğrudan P2P'ye yükseltmeyi** sürdürür.
 7. Hub her peer'e bir VPN IP'si atar (`10.8.0.2` … `10.8.0.254`) ve paketleri kullanıcı alanında
    peer'ler arasında yönlendirir; yönlendirme tablosu görüntüleme için tüm peer'lere de yayınlanır.
+
+### Ekran Görüntüleri
+
+**Ana pencere — istemci bağlı, peer paneli kapalı**
+
+<img src="screenshots/main-window.png" alt="Peertopeer P2P VPN ana penceresi, bağlan modu" width="640">
+
+**Bağlı peer'ler — her makine diğerlerini görür**
+
+Hub her peer'e kendi VPN IP'sini atar. **Taşıma** sütunu, o peer'e doğrudan UDP ile mi
+(`Doğrudan P2P`) yoksa şifreli bulut relay'i üzerinden mi (`Bulut Relay`) ulaşıldığını gösterir.
+
+<img src="screenshots/peers-list.png" alt="VPN IP, public adres, taşıma ve trafik bilgilerini gösteren bağlı peer listesi" width="640">
 
 ### Gereksinimler
 
@@ -326,6 +373,7 @@ build.sh            # Linux derleme betiği (PyInstaller)
 build.bat           # Windows / Linux derleme menüsü (PyInstaller)
 pertoper_vpn.ico    # uygulama simgesi (Windows)
 pertoper_vpn.png    # uygulama simgesi (Linux / tepsi)
+screenshots/        # bu README'de kullanılan ekran görüntüleri
 README.md
 ```
 
