@@ -129,24 +129,6 @@ sudo python pertoper_vpn.py
 
 Both sides must use **the same secret key** and be able to reach the same MQTT brokers.
 
-### Building a Standalone Binary
-
-**Linux**
-
-```bash
-./build.sh
-# output: dist/linux/PertoperVPN
-```
-
-**Windows**
-
-```bat
-build.bat
-:: interactive menu:
-::   [1] Windows (.exe)   ->  dist\windows\PertoperVPN.exe
-::   [2] Linux (ELF)      ->  dist\linux\PertoperVPN
-::   [3] Both
-```
 
 ### Sharing the Peer File
 
@@ -328,24 +310,6 @@ sudo python pertoper_vpn.py
 
 İki taraf da **aynı anahtarı** kullanmalı ve aynı MQTT broker'larına erişebilmelidir.
 
-### Tek Dosya (Binary) Derleme
-
-**Linux**
-
-```bash
-./build.sh
-# çıktı: dist/linux/PertoperVPN
-```
-
-**Windows**
-
-```bat
-build.bat
-:: etkileşimli menü:
-::   [1] Windows (.exe)   ->  dist\windows\PertoperVPN.exe
-::   [2] Linux (ELF)      ->  dist\linux\PertoperVPN
-::   [3] Her ikisi
-```
 
 ### Peer Dosyası Paylaşımı
 
